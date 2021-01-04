@@ -2,32 +2,17 @@ import { useRef } from 'react';
 import {
   Link
 } from 'react-router-dom';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
-// Styles
-// import './animations/buttonEffects.css';
+const buttonHover = keyframes`
+  0%   { background: transparent; color: #8a0099; }
+  100% { background: #8a0099; color: white; border: 1px solid white; }
+`
 
-// const styles = {
-//   button: {
-//     // marginTop: '6vmin',
-
-//     // height: '8vmin',
-//     // width: '30vmin',
-
-//     // alignItems: 'center',
-//     // display: 'flex',
-//     // justifyContent: 'center',
-
-//     // background: 'transparent',
-//     // border: '1px solid #8a0099',
-//     // color: '#8a0099',
-//     // cursor: 'pointer',
-//     // fontFamily: 'Parisienne',
-//     // fontSize: '5vmin',
-
-//     // textDecoration: "none"
-//   }
-// }
+const buttonActive = keyframes`
+  0%   { background: #8a0099; color: white; border: 1px solid white; }
+  100% { background: transparent; color: #8a0099; }
+`
 
 const StyledButton = styled.button`
   margin-top: 6vmin;
@@ -45,6 +30,14 @@ const StyledButton = styled.button`
   cursor: pointer;
   font-family: Parisienne;
   font-size: 5vmin;
+
+  :hover {
+    animation: ${buttonHover} 1s forwards;
+  }
+
+  :active {
+    animation: ${buttonActive} 1s forwards;
+  }
 `
 
 const HiddenLink = styled.div`
