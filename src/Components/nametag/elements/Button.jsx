@@ -2,17 +2,9 @@ import { useRef } from 'react';
 import {
   Link
 } from 'react-router-dom';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
-const buttonHover = keyframes`
-  0%   { background: transparent; color: #8a0099; }
-  100% { background: #8a0099; color: white; border: 1px solid white; }
-`
-
-const buttonActive = keyframes`
-  0%   { background: #8a0099; color: white; border: 1px solid white; }
-  100% { background: transparent; color: #8a0099; }
-`
+import { buttonActive, buttonHover } from '../animations/animations';
 
 const StyledButton = styled.button`
   margin-top: 6vmin;

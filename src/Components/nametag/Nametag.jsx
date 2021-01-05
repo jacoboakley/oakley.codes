@@ -1,4 +1,4 @@
-import React from 'react';
+import styled from 'styled-components';
 
 // Import Elements
 import Title from './elements/Title';
@@ -6,29 +6,26 @@ import Links from './elements/Links';
 import Avatar from './elements/Avatar';
 import Button from './elements/Button';
 
-const styles = {
-  container: {
-    position: 'absolute',
-
-    height: '100vh',
-    width: '100vw',
-
-    alignItems: 'center',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-
-    zIndex: 2,
-  },
-}
+const StyledNametag = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  left: 0;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 2;
+`
 
 const Nametag = () => (
-  <div style={styles.container}   id='landingPage'>
+  <StyledNametag   id='landingPage'>
     <Avatar />
     <Title />
     <Links />
     <Button />
-  </div>
+  </StyledNametag>
 )
 
 export default Nametag
